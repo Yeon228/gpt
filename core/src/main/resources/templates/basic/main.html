@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>GPT-3.5 Q&A</title>
+</head>
+<body>
+<h1>GPT-3.5 Q&A</h1>
+<form action="#" th:action="@{/answer}" th:object="${questionForm}" method="post">
+    <input type="text" th:field="*{question}" placeholder="질문을 입력하세요">
+    <button type="submit">질문하기</button>
+</form>
+<div th:if="${answer}">
+    <p th:text="${answer}"></p>
+</div>
+</body>
+</html>
